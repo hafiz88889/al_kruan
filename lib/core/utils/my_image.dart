@@ -13,4 +13,5 @@ class MyImage{
   static String setting="assets/icons/setting.png";
   static String tasbih="assets/icons/tasbih.png";
   static String mosque="assets/icons/mosque.png";
+  static String compass="assets/images/compass.png";
 }
