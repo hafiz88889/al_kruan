@@ -1,25 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:namaz_salat/core/utils/myText.dart';
 import 'package:namaz_salat/core/utils/my_color.dart';
 import 'package:namaz_salat/core/utils/text_style.dart';
 
 import '../../../../core/component/global_appbar_widget.dart';
 import '../../../../core/utils/my_image.dart';
+import 'api_service.dart';
 
 class NamazerSomoysuciPage extends StatelessWidget {
   const NamazerSomoysuciPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final PrayerTimeController controller = Get.put(PrayerTimeController());
+
     final List<Map<String, dynamic>> items = [
-      {"oyakto": MyText.tahajjod,"time":MyText.to_from_time},
-      {"oyakto": MyText.fajar,"time":MyText.to_from_time},
-      {"oyakto": MyText.sunset,"time":MyText.to_from_time},
-      {"oyakto": MyText.johor,"time":MyText.to_from_time},
-      {"oyakto": MyText.asor,"time":MyText.to_from_time},
-      {"oyakto": MyText.sunrise,"time":MyText.to_from_time},
-      {"oyakto": MyText.magrib,"time":MyText.to_from_time},
-      {"oyakto": MyText.esha,"time":MyText.to_from_time},
+      {"oyakto": MyText.fajar,"time":controller.fajr.value},
+      {"oyakto": MyText.sunrise,"time":controller.Sunset.value},
+      {"oyakto": MyText.johor,"time":controller.dhuhr.value},
+      {"oyakto": MyText.asor,"time":controller.asr.value},
+      {"oyakto": MyText.sunset,"time":controller.Sunrise.value},
+      {"oyakto": MyText.magrib,"time":controller.maghrib.value},
+      {"oyakto": MyText.esha,"time":controller.isha.value},
     ];
     return Scaffold(
       backgroundColor: MyColor.whiteColor,
@@ -71,38 +75,39 @@ class NamazerSomoysuciPage extends StatelessWidget {
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
-                  return Container(
-                    margin: EdgeInsets.only(bottom: 10),
-                    padding: EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: MyColor.greenColor),
-                    ),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            items[index]["oyakto"],
+                  return
+                    Container(
+                      margin: EdgeInsets.only(bottom: 10),
+                      padding: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: MyColor.greenColor),
+                      ),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              items[index]["oyakto"],
+                              style: regularTextStyle18.copyWith(
+                                fontSize: 16,
+                                color: MyColor.grayColor,
+                              ),
+                            ),
+                          ),
+                          Text(
+                            items[index]["time"],
                             style: regularTextStyle18.copyWith(
                               fontSize: 16,
                               color: MyColor.grayColor,
                             ),
                           ),
-                        ),
-                        Text(
-                          items[index]["time"],
-                          style: regularTextStyle18.copyWith(
-                            fontSize: 16,
-                            color: MyColor.grayColor,
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
+                        ],
+                      ),
+                    );
                 },
               ),
             ],
-          ),
+          )
         ),
       ),
     );
