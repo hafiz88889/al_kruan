@@ -5,8 +5,8 @@ import 'package:namaz_salat/core/component/global_appbar_widget.dart';
 import 'package:namaz_salat/core/utils/myText.dart';
 import 'package:namaz_salat/core/utils/my_color.dart';
 import 'package:namaz_salat/core/utils/my_image.dart';
+import 'package:namaz_salat/core/utils/route.dart';
 import 'package:namaz_salat/core/utils/text_style.dart';
-
 import 'api_class.dart';
 
 class AlKuranPage extends StatefulWidget {
@@ -51,7 +51,8 @@ class _AlKuranPageState extends State<AlKuranPage> {
           children: [
             Obx(() {
               if (controller.surahs.isEmpty) {
-                return const Center(child: CircularProgressIndicator());
+                return Center(
+                    child: CircularProgressIndicator());
               } else {
                 return ListView.builder(
                   shrinkWrap: true,
@@ -90,7 +91,10 @@ class _AlKuranPageState extends State<AlKuranPage> {
                             ),
                           ),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              controller.setSurah(surah);
+                              Get.toNamed(RouteHelper.surahDetailsPage);
+                            },
                             child: Text(
                               "Go",
                               style: regularTextStyle18.copyWith(

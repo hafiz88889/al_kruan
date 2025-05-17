@@ -11,6 +11,7 @@ import '../../feature/namazer_somoysuci/pregentation/screen/namazer_somoysuci_pa
 import '../../feature/oaj/pregentation/screen/oaj_page.dart';
 import '../../feature/sahri_iftar/pregentation/screen/sahri_iftar_page.dart';
 import '../../feature/setting_page/pregentation/screen/setting_page.dart';
+import '../../feature/surah_details_page/pregentation/screen/surah_details_page.dart';
 import '../../feature/tasbih/pregentation/screen/sahri_page.dart';
 
 class RouteHelper{
@@ -26,6 +27,7 @@ class RouteHelper{
   static String jummatulKhutbaPage="/jummatulKhutbaPage";
   static String oajPage="/OajPage";
   static String livePage="/LivePage";
+  static String surahDetailsPage="/SurahDetailsPage";
 
   static Map<String,WidgetBuilder>getRoute(){
     return{
@@ -41,6 +43,7 @@ class RouteHelper{
       RouteHelper.jummatulKhutbaPage:(context)=>JummatulKhutbaPage(),
       RouteHelper.oajPage:(context)=>OajPage(),
       RouteHelper.livePage:(context)=>LivePage(),
+      RouteHelper.surahDetailsPage:(context)=>SurahDetailsPage(),
     };
   }
 

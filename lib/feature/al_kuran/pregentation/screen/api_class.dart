@@ -4,6 +4,11 @@ import 'dart:convert';
 
 class QuranController extends GetxController {
   var surahs = [].obs;
+  var selectedSurah = {}.obs;
+
+  void setSurah(Map surah) {
+    selectedSurah.value = surah;
+  }
 
   @override
   void onInit() {
