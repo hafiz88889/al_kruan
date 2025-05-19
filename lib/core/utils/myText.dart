@@ -55,4 +55,12 @@ class MyText{
   static String oyaktoBittiktime="ওয়াক্ত ভিত্তিক সময়সূচি";
   static String today="সোমবার, ১৪ মে ২০২৫ | ১৮ জ্বিলকদ ১৪৪৬";
   static String tahajjod="তাহাজ্জুদ";
+  static String saturday="শনিবার";
+  static String sunday="রবিবার";
+  static String monday="সোমবার";
+  static String tuesday="মঙ্গলবার";
+  static String wednesday="বুধবার";
+  static String thursday="বৃহঃপ্রতিবার";
+  static String friday="শুক্রবার";
+  static String sharidate="02 may";
 }

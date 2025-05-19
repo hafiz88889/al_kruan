@@ -94,13 +94,21 @@ class NamazerSomoysuciPage extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Text(
+                      Obx((){
+                        if(controller.fajr.isEmpty){
+                          return Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        }else{
+                          return Text(
                             items[index]["time"],
                             style: regularTextStyle18.copyWith(
                               fontSize: 16,
                               color: MyColor.grayColor,
                             ),
-                          ),
+                          );
+                        }
+                      })
                         ],
                       ),
                     );
