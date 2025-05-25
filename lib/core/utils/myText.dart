@@ -63,4 +63,10 @@ class MyText{
   static String thursday="বৃহঃপ্রতিবার";
   static String friday="শুক্রবার";
   static String sharidate="02 may";
+  static String laElaha="لَا إِلٰهَ إِلَّا ٱللّٰهُ";
+  static String laElahaBangla="লা ইলা হা ইল্লাল্লা-হু";
+  static String laElahaBanglaottho="আল্লাহ ছাড়া কোনো উপাস্য নেই।";
+  static String porahoyece="পড়া হয়েছে-";
+  static String bar="বার";
+  static String total="সর্বমোটঃ";
 }

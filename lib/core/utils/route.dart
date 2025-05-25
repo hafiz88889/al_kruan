@@ -12,7 +12,7 @@ import '../../feature/oaj/pregentation/screen/oaj_page.dart';
 import '../../feature/sahri_iftar/pregentation/screen/sahri_iftar_page.dart';
 import '../../feature/setting_page/pregentation/screen/setting_page.dart';
 import '../../feature/surah_details_page/pregentation/screen/surah_details_page.dart';
-import '../../feature/tasbih/pregentation/screen/sahri_page.dart';
+import '../../feature/tasbih/pregentation/screen/tasbih_page.dart';
 
 class RouteHelper{
   static String homePage="/";
