@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "552334908765",
+    "project_id": "salatauth",
+    "storage_bucket": "salatauth.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:552334908765:android:cc5463880da8db54915cb4",
+        "android_client_info": {
+          "package_name": "com.example.namaz_salat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvjuLWUOgh7rdRHYsZlBNF2txOr18ZXJk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

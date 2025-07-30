@@ -5,6 +5,7 @@ import 'package:namaz_salat/core/utils/text_style.dart';
 PreferredSizeWidget globalAppBar(String text, Color color,[Widget? action]) {
   return AppBar(
     scrolledUnderElevation: 0,
+   // automaticallyImplyLeading: false,
     title: Text(
       text,
       style: regularTextStyle18.copyWith(

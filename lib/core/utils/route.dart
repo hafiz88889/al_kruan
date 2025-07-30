@@ -7,8 +7,10 @@ import '../../feature/home_page/pregentation/screen/location_drop_down.dart';
 import '../../feature/jummatul_khutba/pregentation/screen/jummatul_khutba_page.dart' show JummatulKhutbaPage;
 import '../../feature/kibla_compas/pregentation/screen/kibla_compas.dart';
 import '../../feature/live/pregentation/screen/live_page.dart';
+import '../../feature/login_page/login_screen.dart';
 import '../../feature/namazer_somoysuci/pregentation/screen/namazer_somoysuci_page.dart' show NamazerSomoysuciPage;
 import '../../feature/oaj/pregentation/screen/oaj_page.dart';
+import '../../feature/reg_page/registation_screen.dart';
 import '../../feature/sahri_iftar/pregentation/screen/sahri_iftar_page.dart';
 import '../../feature/setting_page/pregentation/screen/setting_page.dart';
 import '../../feature/surah_details_page/pregentation/screen/surah_details_page.dart';
@@ -28,6 +30,8 @@ class RouteHelper{
   static String oajPage="/OajPage";
   static String livePage="/LivePage";
   static String surahDetailsPage="/SurahDetailsPage";
+  static String loginPage="/LoginPage";
+  static String registrationPage="/registrationPage";
 
   static Map<String,WidgetBuilder>getRoute(){
     return{
@@ -44,6 +48,8 @@ class RouteHelper{
       RouteHelper.oajPage:(context)=>OajPage(),
       RouteHelper.livePage:(context)=>LivePage(),
       RouteHelper.surahDetailsPage:(context)=>SurahDetailsPage(),
+      RouteHelper.loginPage:(context)=>LoginPage(),
+      RouteHelper.registrationPage:(context)=>RegistrationPage(),
     };
   }
 
