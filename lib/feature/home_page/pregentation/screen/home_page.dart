@@ -34,28 +34,28 @@ class _HomePageState extends State<HomePage> {
   final CounterController controller = Get.put(CounterController());
   @override
   Widget build(BuildContext context) {
-   final List<Map<String,dynamic>>item=[
-     {"image":MyImage.namaz_TimeICon,"text":MyText.namazsoloycuri},
-     {"image":MyImage.khutbaICon,"text":MyText.kuran},
-     {"image":MyImage.sahari_iftar,"text":MyText.sahariIftar},
-     {"image":MyImage.tasbih,"text":MyText.tasbih},
-     {"image":MyImage.compasIcon,"text":MyText.kivla},
-     {"image":MyImage.asmaul_husnaIcon,"text":MyText.asmaul_husna},
-     {"image":MyImage.khutbaICon,"text":MyText.jummatulKhutbah},
-     {"image":MyImage.oaa,"text":MyText.owaj},
-     {"image":MyImage.kavaIcon,"text":MyText.live},
-   ];
-   final List<String>pages=[
-     RouteHelper.namazerSomoysuciPage,
-     RouteHelper.alKuranPage,
-     RouteHelper.sahriIftarPage,
-     RouteHelper.tasbih,
-     RouteHelper.kiblaCompas,
-     RouteHelper.asmaulHusna,
-     RouteHelper.jummatulKhutbaPage,
-     RouteHelper.oajPage,
-     RouteHelper.livePage,
-   ];
+    final List<Map<String, dynamic>> item = [
+      {"image": MyImage.namaz_TimeICon, "text": MyText.namazsoloycuri},
+      {"image": MyImage.khutbaICon, "text": MyText.kuran},
+      {"image": MyImage.sahari_iftar, "text": MyText.sahariIftar},
+      {"image": MyImage.tasbih, "text": MyText.tasbih},
+      {"image": MyImage.compasIcon, "text": MyText.kivla},
+      {"image": MyImage.asmaul_husnaIcon, "text": MyText.asmaul_husna},
+      {"image": MyImage.khutbaICon, "text": MyText.jummatulKhutbah},
+      {"image": MyImage.oaa, "text": MyText.owaj},
+      {"image": MyImage.kavaIcon, "text": MyText.live},
+    ];
+    final List<String> pages = [
+      RouteHelper.namazerSomoysuciPage,
+      RouteHelper.alKuranPage,
+      RouteHelper.sahriIftarPage,
+      RouteHelper.tasbih,
+      RouteHelper.kiblaCompas,
+      RouteHelper.asmaulHusna,
+      /*RouteHelper.jummatulKhutbaPage,
+      RouteHelper.oajPage,
+      RouteHelper.livePage,*/
+    ];
     return Scaffold(
       backgroundColor: MyColor.whiteColor,
       body: SafeArea(
@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Text(MyText.namazTime, style: regularTextStyle18),
                     GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         Get.toNamed(RouteHelper.settingPage);
                       },
                       child: Image(
@@ -99,75 +99,137 @@ class _HomePageState extends State<HomePage> {
                             ),
                             const SizedBox(width: 5),
                             GestureDetector(
-                              onTap: (){
-                          showDialog(
-                            context: context, builder: (context) {
-                            return AlertDialog(
-                              backgroundColor: MyColor.whiteColor,
-                              title: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(MyText.hijritarikh,style: regularTextStyle18.copyWith(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w300,
-                                  ),),
-                                  const SizedBox(height: 15,),
-                                Obx(()=>  Container(
-                                  padding: EdgeInsets.all(15),
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20),
-                                      border: Border.all(color: MyColor.greenColor)
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      Row(
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                              onTap: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) {
+                                    return AlertDialog(
+                                      backgroundColor: MyColor.whiteColor,
+                                      title: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
-                                          ElevatedButton(
-                                            onPressed: (){
-                                              controller.decrement();
-                                            }, child: Icon(Icons.remove,size: 20,color: MyColor.greenColor,),
-                                            style: ElevatedButton.styleFrom(
-                                                minimumSize: Size(50,50),
-                                                backgroundColor: MyColor.whiteColor,
-                                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                                                side: BorderSide(
-                                                    color: MyColor.greenColor
-                                                )
+                                          Text(
+                                            MyText.hijritarikh,
+                                            style: regularTextStyle18.copyWith(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w300,
                                             ),
                                           ),
-                                          const SizedBox(width: 15,),
-                                          Text("${controller.count} দিন",style: regularTextStyle18,),
-                                          const SizedBox(width: 15,),
-                                          ElevatedButton(
-                                            onPressed: (){
-                                              controller.increment();
-                                            }, child: Icon(Icons.add,size: 20,color: MyColor.greenColor,),
-                                            style: ElevatedButton.styleFrom(
-                                                minimumSize: Size(50,50),
-                                                backgroundColor: MyColor.whiteColor,
-                                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                                                side: BorderSide(
-                                                    color: MyColor.greenColor
-                                                )
+                                          const SizedBox(height: 15),
+                                          Obx(
+                                            () => Container(
+                                              padding: EdgeInsets.all(15),
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                                border: Border.all(
+                                                  color: MyColor.greenColor,
+                                                ),
+                                              ),
+                                              child: Column(
+                                                children: [
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      ElevatedButton(
+                                                        onPressed: () {
+                                                          controller
+                                                              .decrement();
+                                                        },
+                                                        child: Icon(
+                                                          Icons.remove,
+                                                          size: 20,
+                                                          color:
+                                                              MyColor
+                                                                  .greenColor,
+                                                        ),
+                                                        style: ElevatedButton.styleFrom(
+                                                          minimumSize: Size(
+                                                            50,
+                                                            50,
+                                                          ),
+                                                          backgroundColor:
+                                                              MyColor
+                                                                  .whiteColor,
+                                                          shape: RoundedRectangleBorder(
+                                                            borderRadius:
+                                                                BorderRadius.circular(
+                                                                  10,
+                                                                ),
+                                                          ),
+                                                          side: BorderSide(
+                                                            color:
+                                                                MyColor
+                                                                    .greenColor,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      const SizedBox(width: 15),
+                                                      Text(
+                                                        "${controller.count} দিন",
+                                                        style:
+                                                            regularTextStyle18,
+                                                      ),
+                                                      const SizedBox(width: 15),
+                                                      ElevatedButton(
+                                                        onPressed: () {
+                                                          controller
+                                                              .increment();
+                                                        },
+                                                        child: Icon(
+                                                          Icons.add,
+                                                          size: 20,
+                                                          color:
+                                                              MyColor
+                                                                  .greenColor,
+                                                        ),
+                                                        style: ElevatedButton.styleFrom(
+                                                          minimumSize: Size(
+                                                            50,
+                                                            50,
+                                                          ),
+                                                          backgroundColor:
+                                                              MyColor
+                                                                  .whiteColor,
+                                                          shape: RoundedRectangleBorder(
+                                                            borderRadius:
+                                                                BorderRadius.circular(
+                                                                  10,
+                                                                ),
+                                                          ),
+                                                          side: BorderSide(
+                                                            color:
+                                                                MyColor
+                                                                    .greenColor,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  const SizedBox(height: 25),
+                                                  Center(
+                                                    child: Text(
+                                                      MyText.ajkertarikh,
+                                                      style: regularTextStyle18
+                                                          .copyWith(
+                                                            fontSize: 16,
+                                                            fontWeight:
+                                                                FontWeight.w300,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ],
                                       ),
-                                      const SizedBox(height: 25,),
-                                      Center(
-                                        child: Text(MyText.ajkertarikh,style: regularTextStyle18.copyWith(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w300,
-                                        ),),
-                                      ),
-                                    ],
-                                  ),
-                                ))
-                                ],
-                              )
-                            );
-                          },);
+                                    );
+                                  },
+                                );
                               },
                               child: Container(
                                 padding: EdgeInsets.all(3),
@@ -198,14 +260,20 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                     GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         Get.toNamed(RouteHelper.locationDropDown);
                       },
                       child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 7),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 7,
+                        ),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
-                          border: Border.all(color: MyColor.greenColor, width: 1.5),
+                          border: Border.all(
+                            color: MyColor.greenColor,
+                            width: 1.5,
+                          ),
                         ),
                         child: Row(
                           children: [
@@ -352,10 +420,9 @@ class _HomePageState extends State<HomePage> {
                             style: regularTextStyle18.copyWith(
                               color: MyColor.whiteColor,
                               fontWeight: FontWeight.w100,
-                              fontSize: 16
+                              fontSize: 16,
                             ),
                           ),
-
                         ],
                       ),
                       Column(
@@ -372,9 +439,9 @@ class _HomePageState extends State<HomePage> {
                           Text(
                             MyText.iftarTime,
                             style: regularTextStyle18.copyWith(
-                                color: MyColor.whiteColor,
-                                fontWeight: FontWeight.w100,
-                                fontSize: 16
+                              color: MyColor.whiteColor,
+                              fontWeight: FontWeight.w100,
+                              fontSize: 16,
                             ),
                           ),
                         ],
@@ -393,9 +460,9 @@ class _HomePageState extends State<HomePage> {
                           Text(
                             MyText.porobortiiftartime,
                             style: regularTextStyle18.copyWith(
-                                color: MyColor.whiteColor,
-                                fontWeight: FontWeight.w100,
-                                fontSize: 16
+                              color: MyColor.whiteColor,
+                              fontWeight: FontWeight.w100,
+                              fontSize: 16,
                             ),
                           ),
                         ],
@@ -403,86 +470,124 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 20,),
+                const SizedBox(height: 20),
                 GridView.builder(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
                   itemCount: item.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount:3,
-                  crossAxisSpacing: 20,
+                    crossAxisCount: 3,
+                    crossAxisSpacing: 20,
                     mainAxisSpacing: 0,
-                ),
-                    itemBuilder: (context, index) {
-                      return GestureDetector(
-                        onTap: (){
-                          Get.toNamed(pages[index]);
-                        },
-                        child: Column(
-                         crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Image(image: AssetImage(item[index]["image"],),height: 30,width: 30,color: MyColor.greenColor,),
-                            const SizedBox(height: 10,),
-                            Text(item[index]["text"],style: regularTextStyle18.copyWith(fontSize: 14),)
-                          ],
-                        ),
-                      );
-                    },
+                  ),
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      onTap: () {
+                        Get.toNamed(pages[index]);
+                      },
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Image(
+                            image: AssetImage(item[index]["image"]),
+                            height: 30,
+                            width: 30,
+                            color: MyColor.greenColor,
+                          ),
+                          const SizedBox(height: 10),
+                          Text(
+                            item[index]["text"],
+                            style: regularTextStyle18.copyWith(fontSize: 14),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
                 ),
                 Container(
                   padding: EdgeInsets.all(15),
-                  decoration:BoxDecoration(
+                  decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
-                    border: Border.all(color: MyColor.redColor)
+                    border: Border.all(color: MyColor.redColor),
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                    Text(MyText.nisiddotime,style: regularTextStyle18.copyWith(fontSize: 14),)  ,
-                       Divider(color:MyColor.grayColor,),
-                      const SizedBox(height: 10,),
-                      NishiddoTimeWidget(text: MyText.nisiddotimemorning, time: MyText.to_from_time),
-                      const SizedBox(height: 10,),
-                      NishiddoTimeWidget(text: MyText.nisiddotimenoon, time: MyText.to_from_time),
-                      const SizedBox(height: 10,),
-                      NishiddoTimeWidget(text: MyText.nisiddotimeafternoon, time: MyText.to_from_time),
+                      Text(
+                        MyText.nisiddotime,
+                        style: regularTextStyle18.copyWith(fontSize: 14),
+                      ),
+                      Divider(color: MyColor.grayColor),
+                      const SizedBox(height: 10),
+                      NishiddoTimeWidget(
+                        text: MyText.nisiddotimemorning,
+                        time: MyText.to_from_time,
+                      ),
+                      const SizedBox(height: 10),
+                      NishiddoTimeWidget(
+                        text: MyText.nisiddotimenoon,
+                        time: MyText.to_from_time,
+                      ),
+                      const SizedBox(height: 10),
+                      NishiddoTimeWidget(
+                        text: MyText.nisiddotimeafternoon,
+                        time: MyText.to_from_time,
+                      ),
                     ],
                   ),
                 ),
-                const SizedBox(height: 10,),
+                const SizedBox(height: 10),
                 Container(
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: MyColor.grayColor,
                   ),
-                  child:Row(
+                  child: Row(
                     children: [
                       Container(
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: MyColor.greenColor
+                          color: MyColor.greenColor,
                         ),
-                        child: Image(image: AssetImage(MyImage.mosque),height: 35,width: 35,color: MyColor.whiteColor,),
+                        child: Image(
+                          image: AssetImage(MyImage.mosque),
+                          height: 35,
+                          width: 35,
+                          color: MyColor.whiteColor,
+                        ),
                       ),
-                      const SizedBox(width: 8,),
+                      const SizedBox(width: 8),
                       Expanded(
-                          child:Text(MyText.aboutApp,style: regularTextStyle18.copyWith(fontSize: 14,color: MyColor.whiteColor),
+                        child: Text(
+                          MyText.aboutApp,
+                          style: regularTextStyle18.copyWith(
+                            fontSize: 14,
+                            color: MyColor.whiteColor,
                           ),
+                        ),
                       ),
                       Container(
-                        padding: EdgeInsets.symmetric(vertical: 5,horizontal: 20),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            color: MyColor.greenColor
+                        padding: EdgeInsets.symmetric(
+                          vertical: 5,
+                          horizontal: 20,
                         ),
-                        child: Image(image: AssetImage(MyImage.arrowIcon,),height: 20,width: 20,color: MyColor.whiteColor,),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: MyColor.greenColor,
+                        ),
+                        child: Image(
+                          image: AssetImage(MyImage.arrowIcon),
+                          height: 20,
+                          width: 20,
+                          color: MyColor.whiteColor,
+                        ),
                       ),
                     ],
                   ),
                 ),
-                const SizedBox(height: 20,),
+                const SizedBox(height: 20),
               ],
             ),
           ),

@@ -18,7 +18,6 @@ class AlKuranPage extends StatefulWidget {
 
 class _AlKuranPageState extends State<AlKuranPage> {
   @override
-  @override
   Widget build(BuildContext context) {
     final QuranController controller = Get.put(QuranController());
     return Scaffold(
